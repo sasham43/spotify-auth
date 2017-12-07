@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>SPOTIFY TOKENS</title>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script>
+        $(function() {
+            $("#start").on('click', function(){
+                $.ajax('/auth').done(function(response){
+                    console.log('response:', response);
+                });
+            });
+
+          console.log('jquery loaded.');
+        });
+      </script>
+      <style>
+        body {
+          text-align: center;
+          background-color: #222;
+          color: aliceblue;
+          padding-top: 15%;
+        }
+      </style>
+    </head>
+
+    <body>
+      <h1><span id="#start">START</span></h1>
+
+    </body>
+</html>

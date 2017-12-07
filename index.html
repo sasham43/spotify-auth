@@ -9,6 +9,10 @@
             $("#start").on('click', function(){
                 $.ajax('/auth').done(function(response){
                     console.log('response:', response);
+                    $("#start").hide();
+                    var link = $("#login");
+                    link.attr("href", response);
+                    link.html(response);
                 });
             });
 
@@ -20,13 +24,31 @@
           text-align: center;
           background-color: #222;
           color: aliceblue;
-          padding-top: 15%;
+          padding-top: 10%;
+        }
+
+        #start {
+            background-color: #222;
+            color: aliceblue;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 24px;
+        }
+
+        #login {
+            color: aliceblue;
+        }
+        #login:hover {
+            color: chartreuse;
         }
       </style>
     </head>
 
     <body>
-      <h1><span id="#start">START</span></h1>
-
+      <!-- <h1>TOKENS</h1> -->
+      <button id="start">START</button>
+      <div>
+          <a id="login"></a>
+      </div>
     </body>
 </html>
